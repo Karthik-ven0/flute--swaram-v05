@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10110f"><meta name="description" content="Beginner-friendly Hindustani bansuri practice coach.">
+<link rel="manifest" href="manifest.webmanifest"><title>Bansuri Guru</title>
+<style>
+:root{color-scheme:dark;--bg:#10110f;--panel:#191b18;--panel2:#20231f;--text:#f4f0e6;--muted:#a6aa9f;--line:#343830;--green:#b8d8a4;--amber:#e7c17c;--red:#e5a09a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#293126 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,sans-serif}button,select{font:inherit}button{cursor:pointer;border:1px solid var(--line);border-radius:14px;background:var(--panel2);color:var(--text);padding:12px 16px;font-weight:650}button:focus-visible,select:focus-visible{outline:2px solid var(--green);outline-offset:3px}button.primary{background:var(--green);color:#172015;border-color:var(--green)}button:disabled{opacity:.45;cursor:not-allowed}.app{max-width:1000px;margin:auto;padding:22px 16px 48px}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:26px}.brand{display:flex;align-items:center;gap:12px}.mark{width:44px;height:44px;border-radius:14px;background:#2b3828;display:grid;place-items:center;font-size:24px}.brand h1{font-size:19px;margin:0;letter-spacing:-.4px}.brand p{margin:2px 0 0;color:var(--muted);font-size:12px}.pill{border:1px solid var(--line);border-radius:99px;padding:7px 11px;color:var(--muted);font-size:12px}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:stretch}.panel{background:linear-gradient(145deg,#1c1f1b,#151714);border:1px solid var(--line);border-radius:24px;padding:24px;min-width:0}.eyebrow{font-size:11px;letter-spacing:1.7px;text-transform:uppercase;color:var(--green);font-weight:800}.hero h2{font-size:clamp(28px,5vw,46px);line-height:1.04;letter-spacing:-1.7px;margin:14px 0}.hero p{color:var(--muted);max-width:490px;margin:0 0 20px}.actions{display:flex;flex-wrap:wrap;gap:10px}.status{display:flex;align-items:center;gap:9px;color:var(--muted);font-size:13px;margin-top:17px}.dot{width:8px;height:8px;border-radius:50%;background:#858b80}.dot.live{background:var(--green);box-shadow:0 0 0 4px #b8d8a41a}.meter-card{display:flex;flex-direction:column;justify-content:space-between;min-height:280px}.meter-top{display:flex;justify-content:space-between;gap:10px;align-items:center}.meter-top h3{font-size:15px;margin:0}.note{font-size:64px;line-height:1;font-weight:800;letter-spacing:-3px;text-align:center;margin:25px 0 3px}.frequency{text-align:center;color:var(--muted);font-variant-numeric:tabular-nums}.tuner{position:relative;margin:28px 4px 8px;height:28px}.track{position:absolute;top:12px;left:0;right:0;height:4px;border-radius:9px;background:linear-gradient(90deg,#a86b65 0%,#9c8b68 30%,#b8d8a4 50%,#9c8b68 70%,#a86b65 100%)}.tick{position:absolute;top:5px;left:50%;width:2px;height:18px;background:#f4f0e6}.needle{position:absolute;top:1px;left:50%;width:4px;height:25px;border-radius:3px;background:var(--green);transform:translateX(-50%);transition:left .12s}.ends{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}.feedback{border-radius:14px;background:#22261f;padding:12px 14px;font-size:13px;color:var(--muted);margin-top:15px}.feedback strong{display:block;color:var(--text);font-size:14px;margin-bottom:3px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}.section-title{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.section-title h3{font-size:17px;margin:0}.section-title span{color:var(--muted);font-size:12px}.steps{display:grid;gap:10px}.step{display:flex;gap:12px;padding:12px;border:1px solid var(--line);border-radius:15px;background:#171916}.num{width:28px;height:28px;border-radius:9px;background:#303a2b;color:var(--green);display:grid;place-items:center;font-weight:800;flex-shrink:0}.step strong{display:block;font-size:14px}.step p{margin:3px 0 0;color:var(--muted);font-size:13px}.lesson{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.swara{flex:1;min-width:54px;padding:12px 5px;text-align:center;border:1px solid var(--line);border-radius:13px;background:#171916}.swara b{display:block;font-size:21px}.swara small{color:var(--muted);font-size:11px}.swara.active{border-color:var(--green);background:#263023}.field{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}.field label{color:var(--muted);font-size:13px}.field select{background:#20231f;color:var(--text);border:1px solid var(--line);padding:10px;border-radius:11px}.bottom{margin-top:18px;color:var(--muted);font-size:12px;text-align:center}.help{font-size:12px;color:var(--muted);margin-top:10px;overflow-wrap:anywhere}@media(max-width:720px){.hero,.grid{grid-template-columns:1fr}.app{padding:16px 12px 34px}.panel{padding:19px}.meter-card{min-height:260px}.top{margin-bottom:18px}.pill{display:none}}
+
+.instrument-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.hole-diagram{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;margin-top:12px}
+.flute-sketch{max-width:220px;width:100%;margin:auto;padding:14px 10px;border-radius:18px;background:#121410;border:1px solid var(--line)}
+.hole-row{display:flex;align-items:center;gap:9px;justify-content:center;margin:8px 0}
+.hole{width:27px;height:27px;border:2px solid #b9b7a9;border-radius:50%;background:#e9dfc9;box-shadow:inset 0 1px 3px #0005}
+.hole.closed{background:#242722;border-color:#b8d8a4;box-shadow:inset 0 0 0 3px #242722}
+.hole.extra{border-color:#e7c17c;background:#e7c17c;position:relative}
+.hole.extra:after{content:"7";position:absolute;inset:0;color:#342b1b;font-size:11px;font-weight:800;display:grid;place-items:center}
+.blow-hole{width:38px;height:17px;border-radius:50%;background:#e9dfc9;border:2px solid #b9b7a9;margin:0 auto 14px}
+.diagram-label{font-size:11px;color:var(--muted);text-align:center}
+.hole-legend{display:grid;gap:9px;font-size:12px;color:var(--muted)}
+.legend-row{display:flex;align-items:center;gap:8px}
+.legend-dot{width:13px;height:13px;border-radius:50%;background:#242722;border:2px solid #b8d8a4;flex-shrink:0}
+.legend-dot.open{background:#e9dfc9;border-color:#b9b7a9}
+.legend-dot.extra{background:#e7c17c;border-color:#e7c17c}
+.confirmed{border:1px solid #3c4c35;background:#20291d;border-radius:13px;padding:12px 14px;font-size:13px;color:var(--muted);margin-top:14px}
+.confirmed strong{display:block;color:var(--green);margin-bottom:3px}
+@media(max-width:720px){.instrument-grid{grid-template-columns:1fr}.hole-diagram{grid-template-columns:1fr}.hole-legend{grid-template-columns:1fr 1fr}}
+
+
+.swara{transition:background .12s,border-color .12s,transform .12s}
+.swara.active{border-color:var(--green);background:#2b3a27;box-shadow:0 0 0 1px #b8d8a433 inset;transform:translateY(-1px)}
+.swara.active small{color:var(--green)}
+.swara-live{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:12px 0;padding:14px 16px;border:1px solid var(--line);border-radius:15px;background:#121410}
+.swara-live-main{min-width:0}
+.swara-live-label{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-weight:800}
+.swara-live-name{font-size:22px;font-weight:800;margin-top:3px;line-height:1.25}
+.swara-live-detail{color:var(--muted);font-size:12px;margin-top:3px}
+.swara-live-note{font-size:34px;font-weight:850;min-width:48px;text-align:center;color:var(--green)}
+.tonic-controls{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.tonic-controls select{background:#20231f;color:var(--text);border:1px solid var(--line);padding:10px;border-radius:11px}
+.tonic-controls button{padding:10px 12px;font-size:12px}
+@media(max-width:720px){.swara-live-name{font-size:20px}.swara-live-note{font-size:28px}}
+
+
+.chart-panel{grid-column:1/-1}
+.fingering-intro{color:var(--muted);font-size:13px;margin:0 0 14px}
+.fingering-legend{display:flex;gap:14px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:12px;margin:10px 0 14px}
+.fingering-table{display:grid;gap:6px}
+.fingering-row{display:grid;grid-template-columns:minmax(94px,1.1fr) repeat(6,minmax(24px,.56fr));gap:6px;align-items:center;padding:8px 10px;border:1px solid var(--line);border-radius:12px;background:#151713;transition:background .15s,border-color .15s}
+.fingering-row.active{border-color:var(--green);background:#263023;box-shadow:inset 0 0 0 1px #b8d8a426}
+.fingering-row .row-label{font-weight:750;font-size:13px;line-height:1.15}
+.fingering-row .row-label small{display:block;color:var(--muted);font-size:10px;font-weight:500;margin-top:3px}
+.fhole{width:22px;height:22px;border-radius:50%;border:2px solid #aeb1a5;justify-self:center;background:#e9dfc9}
+.fhole.closed{background:#161815;border-color:#aeb1a5}
+.fhole.half{background:linear-gradient(90deg,#161815 0 50%,#e9dfc9 50% 100%);border-color:#aeb1a5}
+.hole-numbers{display:grid;grid-template-columns:minmax(94px,1.1fr) repeat(6,minmax(24px,.56fr));gap:6px;padding:0 10px;color:var(--muted);font-size:10px;text-align:center}
+.chart-message{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:12px;font-size:13px;color:var(--muted)}
+.chart-message strong{color:var(--text);display:block;margin-bottom:3px}
+.fingering-row.active .row-label{color:var(--green)}
+@media(max-width:540px){.fingering-row,.hole-numbers{grid-template-columns:minmax(78px,1fr) repeat(6,minmax(19px,.45fr));gap:4px;padding-left:6px;padding-right:6px}.fhole{width:18px;height:18px}.fingering-row .row-label{font-size:11px}.fingering-row .row-label small{font-size:9px}.chart-panel{padding:14px}}
+
+</style></head>
+<body><main class="app">
+<header class="top"><div class="brand"><div class="mark">♫</div><div><h1>Bansuri Guru</h1><p>Small steps. Steady riyaaz.</p></div></div><div class="pill">BEGINNER PATH · DAY 01</div></header>
+<section class="hero"><div class="panel"><div class="eyebrow">Your first lesson</div><h2>Find your<br>first clean tone.</h2><p>Relax your shoulders, bring the blowing edge gently to your lower lip, and experiment with a soft, focused stream of air. No need to force it.</p><div class="actions"><button class="primary" id="startBtn">Start listening</button><button id="stopBtn" disabled>Stop</button></div><div class="status"><span class="dot" id="liveDot"></span><span id="statusText">Microphone is off. Audio is processed on this device.</span></div><div class="help" id="secureHelp"></div></div>
+<div class="panel meter-card"><div class="meter-top"><h3>Live listening</h3><span class="pill" id="modePill">TONE LAB</span></div><div><div class="note" id="note">—</div><div class="frequency" id="freq">Play a note to begin</div><div class="tuner"><div class="track"></div><div class="tick"></div><div class="needle" id="needle"></div></div><div class="ends"><span>Flat</span><span>In tune</span><span>Sharp</span></div></div><div class="feedback" aria-live="polite"><strong id="feedbackTitle">Ready when you are</strong><span id="feedbackBody">The app will look for a stable sound, then estimate pitch when it can.</span></div></div></section>
+<section class="grid"><div class="panel"><div class="section-title"><h3>Today's practice</h3><span>5 minutes</span></div><div class="steps"><div class="step"><div class="num">1</div><div><strong>Set your posture</strong><p>Keep your shoulders relaxed and wrists comfortable. Don't squeeze the flute.</p></div></div><div class="step"><div class="num">2</div><div><strong>Explore the air angle</strong><p>Use gentle air. Make tiny changes to the angle instead of blowing harder.</p></div></div><div class="step"><div class="num">3</div><div><strong>Repeat a short tone</strong><p>Pause between tries. Aim for an easy, repeatable sound, not volume.</p></div></div></div></div>
+<div class="panel"><div class="section-title"><h3>Swara school</h3><span>Begin after tone basics</span></div><p style="color:var(--muted);font-size:13px;margin:0">Your flute's key is not known yet, so this prototype does not assume a fixed concert pitch. First make a steady tone; later we'll calibrate your Sa and map notes for your bansuri.</p><div class="lesson" id="swaraTiles">
+<div class="swara" data-swara-index="0"><b>सा</b><small>Sa</small></div>
+<div class="swara" data-swara-index="1"><b>रे</b><small>Re</small></div>
+<div class="swara" data-swara-index="2"><b>ग</b><small>Ga</small></div>
+<div class="swara" data-swara-index="3"><b>म</b><small>Ma</small></div>
+<div class="swara" data-swara-index="4"><b>प</b><small>Pa</small></div>
+<div class="swara" data-swara-index="5"><b>ध</b><small>Dha</small></div>
+<div class="swara" data-swara-index="6"><b>नि</b><small>Ni</small></div>
+</div>
+<div class="swara-live" aria-live="polite">
+ <div class="swara-live-main"><div class="swara-live-label">Live swara detection</div><div class="swara-live-name" id="swaraLiveName">Waiting for a steady flute tone</div><div class="swara-live-detail" id="swaraLiveDetail">When a pitch is detected, the matching swara will highlight automatically.</div></div>
+ <div class="swara-live-note" id="swaraLiveNote">—</div>
+</div><div class="field"><label for="mode">Practice mode</label><select id="mode"><option value="tone">Clean tone (recommended)</option><option value="swara">Live swara (auto)</option><option value="pitch">Pitch explorer</option><option value="sa">Sa check (C reference)</option></select></div><div class="feedback" id="modeHelp"><strong>Start with tone quality</strong><span>Pitch labels are estimates, not proof of correct embouchure or fingering.</span></div></div></section>
+<section class="instrument-grid" aria-label="Your flute profile">
+ <div class="panel">
+  <div class="section-title"><h3>Your instrument</h3><span>Profile set</span></div>
+  <div class="eyebrow">RADHE FLUTES · C NATURAL</div>
+  <p style="color:var(--muted);font-size:13px;margin:8px 0 0">PVC fiber · right-handed · six main front holes plus one auxiliary hole.</p>
+  <div class="confirmed"><strong>Confirmed starting fingering</strong>For this model, the maker identifies Sa as the first three main holes closed. The blowing opening is separate.</div>
+  <p style="color:var(--muted);font-size:12px;margin:12px 0 0">C4 (about 261.6 Hz) is an initial pitch reference only. We'll verify your actual Sa from the sound before grading pitch.</p>
+  <div class="field"><label for="tonicSelect">Sa / tonic reference</label><select id="tonicSelect" aria-label="Choose Sa tonic">
+   <option value="0" selected>C</option><option value="1">C♯ / D♭</option><option value="2">D</option><option value="3">D♯ / E♭</option><option value="4">E</option><option value="5">F</option><option value="6">F♯ / G♭</option><option value="7">G</option><option value="8">G♯ / A♭</option><option value="9">A</option><option value="10">A♯ / B♭</option><option value="11">B</option>
+  </select></div>
+  <div class="tonic-controls"><button id="calibrateSaBtn">Use current pitch as my Sa</button></div>
+  <div class="help" id="tonicHelp">Default tonic is C for your C Natural flute. Calibration is optional: only use it while deliberately playing your Sa.</div>
+
+ </div>
+ <div class="panel chart-panel">
+  <div class="section-title"><h3>Radhe fingering chart</h3><span>Live-linked · six main holes</span></div>
+  <p class="fingering-intro">Matched to the chart you uploaded. Black means closed, half-shaded means half-open, and white means open. Hole numbers follow the maker's chart from the blowing end toward the far end. The small offset hole is shown open in the supplied chart for these notes.</p>
+  <div class="fingering-legend">
+    <span class="legend-row"><span class="fhole closed"></span> Closed</span>
+    <span class="legend-row"><span class="fhole half"></span> Half-open</span>
+    <span class="legend-row"><span class="fhole"></span> Open</span>
+  </div>
+  <div class="hole-numbers" aria-hidden="true"><span>Main holes</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+  <div class="fingering-table" id="fingeringTable">
+    <div class="fingering-row" data-pattern-interval="0" data-pattern-name="Sa"><span class="row-label">Sa <small>Do · C</small></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole"></span><span class="fhole"></span><span class="fhole"></span></div>
+    <div class="fingering-row" data-pattern-interval="2" data-pattern-name="Re"><span class="row-label">Re <small>Re · D</small></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole"></span><span class="fhole"></span><span class="fhole"></span><span class="fhole"></span></div>
+    <div class="fingering-row" data-pattern-interval="4" data-pattern-name="Ga"><span class="row-label">Ga <small>Mi · E</small></span><span class="fhole closed"></span><span class="fhole"></span><span class="fhole"></span><span class="fhole"></span><span class="fhole"></span><span class="fhole"></span></div>
+    <div class="fingering-row" data-pattern-interval="5" data-pattern-name="Ma"><span class="row-label">Ma <small>Fa · F</small></span><span class="fhole half"></span><span class="fhole"></span><span class="fhole"></span><span class="fhole"></span><span class="fhole"></span><span class="fhole"></span></div>
+    <div class="fingering-row" data-pattern-interval="7" data-pattern-name="Pa"><span class="row-label">Pa <small>Sol · G</small></span><span class="fhole"></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole closed"></span></div>
+    <div class="fingering-row" data-pattern-interval="9" data-pattern-name="Dha"><span class="row-label">Dha <small>La · A</small></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole"></span></div>
+    <div class="fingering-row" data-pattern-interval="11" data-pattern-name="Ni"><span class="row-label">Ni <small>Ti · B</small></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole"></span><span class="fhole"></span></div>
+    <div class="fingering-row" data-pattern-interval="0" data-pattern-name="Higher Sa"><span class="row-label">Higher Sa <small>Do · upper octave</small></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole closed"></span><span class="fhole"></span><span class="fhole"></span><span class="fhole"></span></div>
+  </div>
+  <div class="chart-message" id="chartMessage" aria-live="polite"><strong>Waiting for a note</strong>Play a steady note to highlight its row automatically. This chart includes the shuddha swaras shown in your sheet; it does not specify komal or tivra fingerings.</div>
+  <p class="help">This digital chart transcribes the maker's supplied sheet. Use the included course/manual for confirmation if a fingering or the auxiliary hole behaves differently on your flute.</p>
+</div>
+</section>
+
+<p class="bottom">Prototype v0.5 · Maker fingering chart · Microphone permission required · Use HTTPS or localhost.</p></main>
+<script>
+let audioContext=null,stream=null,source=null,analyser=null,raf=0,buffer=null,smoothedFreq=null,stableFrames=0,lastGoodAt=0;
+let tonicHz=261.625565, swaraCandidate=null, swaraCandidateFrames=0, activeSwaraInterval=null;
+const $=id=>document.getElementById(id);const startBtn=$('startBtn'),stopBtn=$('stopBtn'),noteEl=$('note'),freqEl=$('freq'),needle=$('needle');
+const noteNames=['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];
+function autoCorrelate(buf,sr){let rms=0;for(let i=0;i<buf.length;i++)rms+=buf[i]*buf[i];rms=Math.sqrt(rms/buf.length);if(rms<.009)return{freq:-1,rms};let r1=0,r2=buf.length-1,threshold=.15;for(let i=0;i<buf.length/2;i++){if(Math.abs(buf[i])<threshold){r1=i;break}}for(let i=1;i<buf.length/2;i++){if(Math.abs(buf[buf.length-i])<threshold){r2=buf.length-i;break}}const slice=buf.slice(r1,r2),n=slice.length;if(n<32)return{freq:-1,rms};const corr=new Float32Array(n);for(let lag=0;lag<n;lag++){let sum=0;for(let j=0;j<n-lag;j++)sum+=slice[j]*slice[j+lag];corr[lag]=sum}let d=0;while(d+1<n&&corr[d]>corr[d+1])d++;let max=-1,period=-1;for(let lag=d;lag<n;lag++){if(corr[lag]>max){max=corr[lag];period=lag}}if(period<=0)return{freq:-1,rms};let t0=period;if(t0>1&&t0<n-1){const a=corr[t0-1],b=corr[t0],c=corr[t0+1],den=2*(2*b-a-c);if(den)t0+=(c-a)/den}const freq=sr/t0;return{freq:freq>65&&freq<1800?freq:-1,rms}}
+
+function pitchInfo(freq){
+  const midiFloat=69+12*Math.log2(freq/440),rounded=Math.round(midiFloat),cents=(midiFloat-rounded)*100;
+  return{name:noteNames[(rounded%12+12)%12],octave:Math.floor(rounded/12)-1,cents,midi:rounded,midiFloat};
+}
+const swaraMap=[
+ {tile:0,name:'Sa',hindi:'सा',variant:'Shuddha Sa'},
+ {tile:1,name:'Komal Re',hindi:'रे कोमल',variant:'Komal Re'},
+ {tile:1,name:'Re',hindi:'शुद्ध रे',variant:'Shuddha Re'},
+ {tile:2,name:'Komal Ga',hindi:'ग कोमल',variant:'Komal Ga'},
+ {tile:2,name:'Ga',hindi:'शुद्ध ग',variant:'Shuddha Ga'},
+ {tile:3,name:'Ma',hindi:'शुद्ध म',variant:'Shuddha Ma'},
+ {tile:3,name:'Tivra Ma',hindi:'म तीव्र',variant:'Tivra Ma'},
+ {tile:4,name:'Pa',hindi:'प',variant:'Shuddha Pa'},
+ {tile:5,name:'Komal Dha',hindi:'ध कोमल',variant:'Komal Dha'},
+ {tile:5,name:'Dha',hindi:'शुद्ध ध',variant:'Shuddha Dha'},
+ {tile:6,name:'Komal Ni',hindi:'नि कोमल',variant:'Komal Ni'},
+ {tile:6,name:'Ni',hindi:'शुद्ध नि',variant:'Shuddha Ni'}
+];
+function closestSwara(freq){
+  const relativeSemitones=12*Math.log2(freq/tonicHz);
+  const nearest=Math.round(relativeSemitones);
+  const interval=((nearest%12)+12)%12;
+  return {interval,cents:(relativeSemitones-nearest)*100,swara:swaraMap[interval],semitones:nearest};
+}
+function updateFingeringChart(interval, swara, cents){
+  const rows=[...document.querySelectorAll('#fingeringTable .fingering-row')];
+  const exact=rows.some(row=>Number(row.dataset.patternInterval)===interval);
+  rows.forEach(row=>row.classList.toggle('active',exact && Number(row.dataset.patternInterval)===interval));
+  if(exact){
+    const row=rows.find(row=>Number(row.dataset.patternInterval)===interval);
+    const name=row.dataset.patternName;
+    $('chartMessage').innerHTML=`<strong>${name} fingering highlighted</strong>Compare your finger coverage with the row. The microphone estimates pitch; it cannot see whether your fingers are sealing the holes.`;
+  }else{
+    rows.forEach(row=>row.classList.remove('active'));
+    $('chartMessage').innerHTML=`<strong>${swara.name} detected</strong>The supplied chart shows the shuddha swaras only. It doesn't provide a komal/tivra fingering for this note, so no fingering row is highlighted.`;
+  }
+}
+function setActiveSwara(interval, cents, p){
+  const info=swaraMap[interval];
+  document.querySelectorAll('#swaraTiles .swara').forEach(el=>{
+    el.classList.toggle('active',Number(el.dataset.swaraIndex)===info.tile);
+  });
+  $('swaraLiveName').textContent=info.name+' · '+info.hindi;
+  $('swaraLiveNote').textContent=p.name;
+  const direction=Math.abs(cents)<=10?'close to the target pitch':cents<0?`${Math.abs(cents).toFixed(0)} cents flat`:`${cents.toFixed(0)} cents sharp`;
+  $('swaraLiveDetail').textContent=`Auto-detected · ${p.name}${p.octave} · ${direction} relative to ${$('tonicSelect').selectedOptions[0].textContent} Sa`;
+  updateFingeringChart(interval, info, cents);
+}
+function clearActiveSwara(){
+  document.querySelectorAll('#swaraTiles .swara').forEach(el=>el.classList.remove('active'));
+  $('swaraLiveName').textContent='Waiting for a steady flute tone';
+  $('swaraLiveDetail').textContent='Play a sustained note; the app will highlight the closest swara automatically.';
+  $('swaraLiveNote').textContent='—';
+  document.querySelectorAll('#fingeringTable .fingering-row').forEach(row=>row.classList.remove('active'));
+  $('chartMessage').innerHTML='<strong>Waiting for a note</strong>Play a steady note to highlight its row automatically. This chart includes the shuddha swaras shown in your sheet; it does not specify komal or tivra fingerings.';
+  swaraCandidate=null;swaraCandidateFrames=0;activeSwaraInterval=null;
+}
+function setTonicByPitchClass(pc){
+  tonicHz=440*Math.pow(2,((60+pc)-69)/12);
+  $('tonicSelect').value=String(pc);
+  try{localStorage.setItem('bansuriTonicHz',String(tonicHz));localStorage.setItem('bansuriTonicPC',String(pc))}catch(e){}
+}
+function feedback(title,body){$('feedbackTitle').textContent=title;$('feedbackBody').textContent=body}
+function tick(){
+ if(!analyser)return;
+ analyser.getFloatTimeDomainData(buffer);
+ const{freq,rms}=autoCorrelate(buffer,audioContext.sampleRate);
+ if(freq>0){
+   smoothedFreq=smoothedFreq?smoothedFreq*.72+freq*.28:freq;stableFrames++;lastGoodAt=performance.now();
+   const p=pitchInfo(smoothedFreq),cents=p.cents, sw=closestSwara(smoothedFreq);
+   noteEl.textContent=p.name;freqEl.textContent=`${smoothedFreq.toFixed(1)} Hz · ${cents>0?'+':''}${cents.toFixed(0)} cents`;
+   needle.style.left=`${Math.max(3,Math.min(97,50+cents/50*47))}%`;
+   // Debounce swara changes so the active tile does not flicker between adjacent notes.
+   if(sw.interval===swaraCandidate)swaraCandidateFrames++;else{swaraCandidate=sw.interval;swaraCandidateFrames=1}
+   if(swaraCandidateFrames>=4 && rms>.009){
+     activeSwaraInterval=sw.interval;setActiveSwara(sw.interval,sw.cents,p);
+   }
+   if($('mode').value==='tone'){
+     if(stableFrames>20)feedback('A tone is holding','Nice work. The swara tracker above follows the closest note automatically; try keeping the sound even.');
+     else feedback('Sound detected — keep exploring','Make small changes to the air angle and lip opening. Watch the swara highlight above; stop if you feel dizzy.');
+   }else if($('mode').value==='sa'){
+     const saCents=1200*Math.log2(smoothedFreq/tonicHz);
+     freqEl.textContent=`${smoothedFreq.toFixed(1)} Hz · ${saCents>0?'+':''}${saCents.toFixed(0)} cents from Sa reference`;
+     needle.style.left=`${Math.max(3,Math.min(97,50+((saCents/100-Math.round(saCents/100))*47)))}%`;
+     feedback(Math.abs(saCents)<15?'Near the Sa reference':saCents<0?'Below the Sa reference':'Above the Sa reference','This compares with your selected tonic reference. Verify your actual Sa before treating it as a pass/fail result.');
+   }else if($('mode').value==='swara'){
+     feedback('Live swara tracking',`${sw.swara.name} is the closest swara to the detected pitch. The highlight follows your sound automatically.`);
+   }else{
+     feedback(Math.abs(cents)<=10?'Close to pitch':cents<0?'Slightly flat':'Slightly sharp',`Estimated chromatic note ${p.name}${p.octave}. Live swara detection continues above.`);
+   }
+ }else if(performance.now()-lastGoodAt>500){
+   noteEl.textContent='—';freqEl.textContent=rms>.006?'Sound heard · no stable pitch yet':'Waiting for flute tone';needle.style.left='50%';stableFrames=0;
+   clearActiveSwara();
+   feedback(rms>.006?'Keep experimenting gently':'Ready when you are',rms>.006?'Sound is present, but a stable fundamental was not detected. Try a sustained tone.':'Bring the flute to your lips and try a soft, steady breath.');
+ }
+ raf=requestAnimationFrame(tick);
+}
+function stop(){cancelAnimationFrame(raf);raf=0;if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}if(audioContext){audioContext.close().catch(()=>{});audioContext=null}source=null;analyser=null;buffer=null;startBtn.disabled=false;stopBtn.disabled=true;$('liveDot').classList.remove('live');$('statusText').textContent='Microphone is off. Audio is processed on this device.';noteEl.textContent='—';freqEl.textContent='Play a note to begin';needle.style.left='50%';feedback('Listening stopped','Take a breath. Ready for another try whenever you are.')}
+async function start(){if(!window.isSecureContext){feedback('Secure connection required','This page was opened as a local file or insecure URL. Open it from localhost or an HTTPS website to enable the microphone.');$('secureHelp').textContent='Tip: extract the ZIP, run: python -m http.server 8000, then open http://localhost:8000 on the same device.';return}if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia){feedback('Browser microphone unavailable','Try Chrome or another modern browser and check that the page is served over HTTPS or localhost.');return}startBtn.disabled=true;feedback('Requesting microphone permission…','If a browser permission prompt appears, choose Allow.');try{stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false},video:false});audioContext=new(window.AudioContext||window.webkitAudioContext)();await audioContext.resume();source=audioContext.createMediaStreamSource(stream);analyser=audioContext.createAnalyser();analyser.fftSize=4096;analyser.smoothingTimeConstant=0;source.connect(analyser);buffer=new Float32Array(analyser.fftSize);smoothedFreq=null;stableFrames=0;lastGoodAt=performance.now();startBtn.disabled=true;stopBtn.disabled=false;$('liveDot').classList.add('live');$('statusText').textContent='Listening on this device · no audio is uploaded';$('secureHelp').textContent='';tick()}catch(e){startBtn.disabled=false;let msg='Microphone could not start.';if(e.name==='NotAllowedError'||e.name==='PermissionDeniedError')msg='Permission denied. Tap the site controls beside the address bar, allow Microphone, then reload and try again.';else if(e.name==='NotFoundError'||e.name==='DevicesNotFoundError')msg='No microphone was found. Connect or enable a microphone and try again.';else if(e.name==='NotReadableError'||e.name==='TrackStartError')msg='The microphone may be in use by another app. Close other apps using it and try again.';else if(e.name==='SecurityError')msg='The browser blocked microphone access because this page is not in a secure context. Use HTTPS or localhost.';else msg=`${msg} (${e.name||'unknown error'}: ${e.message||'no details'})`;feedback('Microphone setup failed',msg);$('statusText').textContent='Microphone access did not start.';$('secureHelp').textContent=msg;console.error('Microphone error:',e)}}
+$('tonicSelect').addEventListener('change',e=>{setTonicByPitchClass(Number(e.target.value));$('tonicHelp').textContent='Sa reference set to '+e.target.selectedOptions[0].textContent+'. The detected swara tiles update relative to this tonic.'});
+$('calibrateSaBtn').addEventListener('click',()=>{
+ if(!smoothedFreq || stableFrames<4){$('tonicHelp').textContent='No steady pitch yet. Start listening and play your intended Sa first, then press this button.';return}
+ const p=pitchInfo(smoothedFreq),pc=((p.midi%12)+12)%12;
+ tonicHz=smoothedFreq;$('tonicSelect').value=String(pc);
+ $('tonicHelp').textContent=`Calibrated from ${p.name}${p.octave} (${smoothedFreq.toFixed(1)} Hz). Use this only if you were deliberately playing Sa.`;
+ try{localStorage.setItem('bansuriTonicHz',String(tonicHz));localStorage.setItem('bansuriTonicPC',String(pc))}catch(e){}
+});
+try{const savedHz=Number(localStorage.getItem('bansuriTonicHz'));const savedPc=localStorage.getItem('bansuriTonicPC');if(savedHz>50&&savedHz<2000)tonicHz=savedHz;if(savedPc!==null)$('tonicSelect').value=savedPc}catch(e){}
+startBtn.addEventListener('click',start);stopBtn.addEventListener('click',stop);$('mode').addEventListener('change',e=>{const pitch=e.target.value==='pitch';const sa=e.target.value==='sa';const swaraMode=e.target.value==='swara';$('modePill').textContent=sa?'SA CHECK':pitch?'PITCH EXPLORER':swaraMode?'LIVE SWARA':'TONE LAB';$('modeHelp').innerHTML=sa?'<strong>Compare with your Sa reference</strong><span>Use your selected tonic, or calibrate only while deliberately playing Sa.</span>':pitch?'<strong>Explore your pitch</strong><span>Shows an estimated nearest chromatic note.</span>':swaraMode?'<strong>Automatic swara detection</strong><span>Play any sustained note; the nearest swara variant is identified and its tile lights automatically.</span>':'<strong>Start with tone quality</strong><span>The live swara tracker still runs while you practice tone.</span>'});window.addEventListener('pagehide',stop);
+if('serviceWorker'in navigator&&location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+if(!window.isSecureContext){$('secureHelp').textContent='Microphone access needs HTTPS or localhost. Opening this file directly (file://) will not work.'}
+</script></body></html>
